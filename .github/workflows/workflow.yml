@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
         persist-credentials: false
         fetch-depth: 0
@@ -30,4 +30,7 @@ jobs:
         git config --local user.email "rukidding@khu.ac.kr"
         git add -A
         git commit -m "GitHub Actions Results added"
-        git push
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.SUNGMI_TOKEN }}
