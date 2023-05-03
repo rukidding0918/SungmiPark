@@ -9,7 +9,7 @@ from utils.thumbnails import thumbnail
 from utils.works import get_dir_list, get_file_list
 
 load_dotenv()
-TITLE = os.getenv("TITLE")
+TITLE = os.getenv("TITLE", "SUNGMI PARK")
 IMAGE_ROOT = "./static/images/"
 
 app = flask.Flask(__name__)
@@ -32,9 +32,9 @@ if __name__ == "__main__":
             works = []
             for work_image in work_images:
                 works.append({
-                "title": os.getenv("WORK_TITLE"),
-                "description": os.getenv("WORK_DESCRIPTION"),
-                "size": os.getenv("WORK_SIZE"),
+                "title": os.getenv("WORK_TITLE", "The little prince"),
+                "description": os.getenv("WORK_DESCRIPTION", "Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature, about the primeval forest."),
+                "size": os.getenv("WORK_SIZE", "200x300"),
                 "image_url": f"/static/images/{dir}/{work_image}",
                 })
                 work_html = render_template(
