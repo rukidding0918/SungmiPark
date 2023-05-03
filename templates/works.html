@@ -1,13 +1,19 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
-    <h1>Works in {{ year }}</h1>
+    <h1 class="uk-margin">Works in {{ year }}</h1>
     <div>
         {% for work in works %}
-            <div>
-                <img src="{{ work.image_url }}" alt="{{ work.title }}" height=200 />
-                <h2>{{ work.title }}</h2>
-                <p>{{ work.description }}</p>
+            <div class="uk-margin-large-bottom">
+                <picture>
+                    <source srcset="{{ work.image_url }}" media="(min-width: 800px)">
+                    <source srcset="{{ work.resized_url }}" media="(min-width: 450px)">
+                    <img src="{{ work.image_url }}" alt="{{ work.title }}" loading="lazy" class="work-image"/>
+                </picture>
+                <dl class="uk-description-list">
+                    <dt>{{ work.title }}</dt>
+                    <dd>{{ work.description }}, {{ work.size }}</dd>
+                </dl>
             </div>
         {% endfor %}
     </div>

@@ -1,0 +1,16 @@
+h1 {
+    font-size: 1.5rem;
+}
+
+.work-image {
+    max-height: 65vh;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+dd {
+    font-stretch: expanded;
+}
