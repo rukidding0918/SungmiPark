@@ -27,7 +27,4 @@ jobs:
         git config --local user.email "rukidding@khu.ac.kr"
         git add -A
         git commit -m "GitHub Actions Results added"
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git push
