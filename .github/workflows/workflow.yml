@@ -25,8 +25,8 @@ jobs:
         python main_workflow.py
     - name: Commit and Push The Results From Python Selenium Action
       run: |
-        git config --global user.name "rukidding0918"
-        git config --global user.email "rukidding@khu.ac.kr"
+        git config --local user.name "rukidding0918"
+        git config --local user.email "rukidding@khu.ac.kr"
         git add -A
         git commit -m "GitHub Actions Results added"
     - name: Push changes
