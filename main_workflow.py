@@ -43,12 +43,12 @@ if __name__ == "__main__":
                     menus = dirs,
                     works = works,
                 )
-                with open(f"./src/works/{dir}.html", "w") as f:
+                with open(f"{dir}.html", "w") as f:
                     f.write(work_html)
         profile_html = render_template(
             'profile.html',
             title = TITLE,
             menus = dirs,
         )
-        with open("src/profile.html", "w") as f:
+        with open("profile.html", "w") as f:
             f.write(profile_html)
