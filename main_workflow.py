@@ -35,7 +35,7 @@ if __name__ == "__main__":
                 "title": os.getenv("WORK_TITLE", "The little prince"),
                 "description": os.getenv("WORK_DESCRIPTION", "Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature, about the primeval forest."),
                 "size": os.getenv("WORK_SIZE", "200x300"),
-                "image_url": f"/static/images/{dir}/{work_image}",
+                "image_url": f"static/images/{dir}/{work_image}",
                 })
                 work_html = render_template(
                     'works.html',
