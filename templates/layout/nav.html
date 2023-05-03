@@ -1,0 +1,35 @@
+<nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+
+            <div class="uk-navbar-center">
+
+                <div class="uk-navbar-center-left">
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="#">Works</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    {% for menu in menus %}
+                                        <li><a href="/src/works/{{ menu }}.html">{{ menu }}</a></li>
+                                    {% endfor %}                                        
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Logo Title-->
+                <a class="uk-navbar-item uk-logo" href="/">{{ title }}</a>
+                
+                <div class="uk-navbar-center-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a href="/src/profile.html">Profile</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</nav>

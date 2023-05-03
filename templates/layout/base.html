@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{{ title }}`s Portfolio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/uikit.min.css" />
+        <script src="/static/js/uikit.min.js"></script>
+        <script src="/static/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+    <!-- Nav -->
+    {% include "layout/nav.html" %}
+
+    <!-- Main -->
+    <div class="uk-container uk-container-xsmall">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    </body>
+</html>
