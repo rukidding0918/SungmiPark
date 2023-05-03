@@ -1,9 +1,9 @@
 print("hello")
 
-from utils.menu import menu
-from utils.thumnail import thumnail
+from utils.menus import menu
+from utils.thumbnails import thumbnail
 from utils.works import works
 
 print(menu)
-print(thumnail)
+print(thumbnail)
 print(works)
