@@ -41,6 +41,7 @@ if __name__ == "__main__":
                     'works.html',
                     title = TITLE,
                     menus = dirs,
+                    year = dir,
                     works = works,
                 )
                 with open(f"{dir}.html", "w") as f:
