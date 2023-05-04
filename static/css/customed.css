@@ -1,9 +1,25 @@
+.menu-container {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.title {
+    display: inline-block;
+    padding-top: 2rem;
+    margin-bottom: 0;
+}
+
 h1 {
     font-size: 1.5rem;
 }
 
-.work-image {
-    max-height: 65vh;
+h2 {
+    font-size: 1.2rem;
 }
 
 img {
@@ -13,4 +29,11 @@ img {
 
 dd {
     font-stretch: expanded;
+}
+
+.menu {
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 0;
+    margin-left: 30px;
 }

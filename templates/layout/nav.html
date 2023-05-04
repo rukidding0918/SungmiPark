@@ -1,37 +1,20 @@
-<nav class="uk-navbar-container">
-    <div class="uk-container">
-        <div uk-navbar>
-
-            <div class="uk-navbar-center">
-
-                <div class="uk-navbar-center-left">
-                    <ul class="uk-navbar-nav">
-                        <li>
-                            <a href="#">Works</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    {% for menu in menus %}
-                                        <li><a href="{{ menu }}.html">{{ menu }}</a></li>
-                                    {% endfor %}                                        
-                                </ul>
-                            </div>
-                        </li>
+<div class="uk-container uk-container-xsmall menu-container">
+    <h1 class="title">⁌ {{ title }} ⁍</h1>
+    <nav uk-navbar>
+        <ul class="uk-list uk-flex menu">
+            <li><a class="uk-link-muted" href="index.html">Home</a></li>
+            <li>
+                <a class="uk-link-muted" href="#">Works</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        {% for menu in menus %}
+                            <li><a class="uk-link-muted" href="{{ menu }}.html">{{ menu }}</a></li>
+                        {% endfor %}                                        
                     </ul>
                 </div>
-                
-                <!-- Logo Title-->
-                <a class="uk-navbar-item uk-logo" href="index.html">{{ title }}</a>
-                
-                <div class="uk-navbar-center-right">
-                    <ul class="uk-navbar-nav">
-                        <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</nav>
-
-<hr class="uk-divider">
+            </li>
+            <li><a class="uk-link-muted" href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+</div>
+<hr class="uk-divider-icon">
