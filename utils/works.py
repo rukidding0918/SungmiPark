@@ -3,11 +3,17 @@ import os
 
 
 def get_dir_list(path):
-    dirs = []
+    years = []
+    others = []
     for dir in os.listdir(path):
         if os.path.isdir(os.path.join(path, dir)):
-            dirs.append(dir)
-    return dirs
+            if dir.isnumeric():
+                years.append(dir)
+            else:
+                others.append(dir)
+    years.sort(reverse=True)
+    others.sort()
+    return years + others
 
 
 def get_file_list(path):
