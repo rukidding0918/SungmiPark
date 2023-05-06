@@ -18,10 +18,28 @@
 
 h1 {
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+p,
+td {
+    font-size: 0.85rem;
+    margin: 0.85rem;
+}
+
+.mylist li {
+    font-size: 0.85rem !important;
+    margin-left: 0.85rem !important;
 }
 
 img {
