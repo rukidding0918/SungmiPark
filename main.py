@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 from concurrent.futures import ThreadPoolExecutor
 
@@ -7,8 +8,6 @@ from flask import render_template
 import flask
 from PIL import Image
 
-from utils.menus import menu
-from utils.thumbnails import thumbnail
 from utils.works import get_dir_list, get_file_list
 
 load_dotenv()
@@ -63,17 +62,29 @@ def write_static_page(template_name, **kwargs):
     with open(template_name, "w") as f:
         f.write(html)
 
+def get_size_pattern(file_path):
+    filename = os.path.split(file_path)[1]
+    size_pattern_1 = r"(\d+)x(\d+)"
+    match_1 = re.match(size_pattern_1, filename)
+    if match_1:
+        return match_1.group(0)
+    size_pattern_2 = r"(\d+)(호)"
+    match_2 = re.match(size_pattern_2, filename)
+    if match_2:
+        return match_2.group(0)
+
 
 app = flask.Flask(__name__)
-resize = True
+
+resize = False
+dirs = get_dir_list(IMAGE_ROOT)
 
 if __name__ == "__main__":
-    dirs = get_dir_list(IMAGE_ROOT)
-
     with app.app_context():
+        # static pages
         templates = ["index.html", "profile.html", "notes.html", "articles.html", "contact.html"]
         for template in templates:
-            if template == "contact.html":
+            if template in ["contact.html", "profile.html"]:
                 write_static_page(template, title=TITLE, email=EMAIL, menus=dirs)
             else:
                 write_static_page(template, title=TITLE, menus=dirs)
@@ -88,16 +99,16 @@ if __name__ == "__main__":
                 works.append({
                     "title": os.getenv("WORK_TITLE", "title"),
                     "description": os.getenv("WORK_DESCRIPTION", "description"),
-                    "size": os.getenv("WORK_SIZE", "100호"),
+                    "size": get_size_pattern(work_image) or "unknown",
                     "image_url": work_image,
                 })
-                work_html = render_template(
-                    'works.html',
-                    title = TITLE,
-                    menus = dirs,
-                    year = dir,
-                    works = works,
-                )
+            work_html = render_template(
+                'works.html',
+                title = TITLE,
+                menus = dirs,
+                year = dir,
+                works = works,
+            )
             with open(f"{dir}.html", "w") as f:
                 f.write(work_html)
         
