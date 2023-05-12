@@ -11,6 +11,7 @@ jobs:
       EMAIL: "sw5860@naver.com"
       WORK_TITLE: "SOME TILTLE"
       WORK_DESCRIPTION: "SOME DESCRIPTION"
+      RESIZE: 1
       
     runs-on: ubuntu-latest
     steps:

@@ -19,6 +19,9 @@ except:
 TITLE = os.getenv("TITLE", "SUNGMI PARK")
 EMAIL = os.getenv("EMAIL", "rukidding@khu.ac.kr")
 IMAGE_ROOT = "./static/images/"
+WORK_TITLE = os.getenv("WORK_TITLE", "title")
+WORK_DESCRIPTION = os.getenv("WORK_DESCRIPTION", "description")
+RESIZE = bool(os.getenv("RESIZE", 1))
 
 
 def reset_resized_dir(dir, dest_dir="resized"):
@@ -81,7 +84,7 @@ def get_size_pattern(file_path):
 
 app = flask.Flask(__name__)
 
-resize = False
+resize = RESIZE
 dirs = get_dir_list(IMAGE_ROOT)
 
 if __name__ == "__main__":
@@ -94,7 +97,7 @@ if __name__ == "__main__":
             else:
                 write_static_page(template, title=TITLE, menus=dirs)
 
-        # works
+        # works pages
         for dir in dirs:
             image_dir = os.path.join(IMAGE_ROOT, dir) # ./static/images/2021
             resized_image_names = resize_images_in_dir(image_dir, resize=resize)
@@ -102,8 +105,8 @@ if __name__ == "__main__":
             works = []
             for work_image in resized_image_names:
                 works.append({
-                    "title": os.getenv("WORK_TITLE", "title"),
-                    "description": os.getenv("WORK_DESCRIPTION", "description"),
+                    "title": WORK_TITLE,
+                    "description": WORK_DESCRIPTION,
                     "size": get_size_pattern(work_image) or "unknown",
                     "image_url": work_image,
                 })
