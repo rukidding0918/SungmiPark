@@ -1,7 +1,39 @@
-# SungmiPark
+# Seongmee Park`s Portfolio Web Site
 
-# github actions permission error solution
-https://stackoverflow.com/questions/72851548/permission-denied-to-github-actionsbot
+## 관리하는 방법
 
-# thumbnail creation
-https://superfastpython.com/processpoolexecutor-thumbnail-images/
+### 이미지 추가
+`static/images` 폴더 내부에 YYYY 형식의 폴더 만든 후 <사이즈>.jpg 형식으로 만들어주세요.  
+판화와 같이 기법을 기준으로 폴더를 만드셔도 좋습니다.  
+<사이즈>는 "200x300", 혹은 "20호" 두 가지 양식으로 가능합니다.  
+이런 형식은 불가능합니다.  
+- 86cm x 120cm(띄어쓰기 cm 등의 수치 기입) -> 86x120으로 바꿔주세요.
+- 30 호(띄어쓰기) -> 30호로 바꿔주세요.
+
+### 이미지 삭제
+해당 이미지 파일을 삭제하시면 됩니다.  
+
+### 이미지 안의 resize 폴더
+자동으로 생성되며 업로드한 이미지를 resizing하여 웹에 올립니다.  
+원본은 원본대로 저장하며, 지나친 용량 문제를 해소하기 위해 resizing합니다.  
+
+### 텍스트 수정
+templates 폴더 안의 파일을 rendering 과정을 통해 실제 웹에 올리는 페이지를 만듭니다.  
+따라서 수정이 필요할 때 templates 안의 파일을 수정해야 합니다.  
+
+
+### .github/workflow/deploy.yml 파일에서 수정 가능한 것들
+- TITLE: 사이트의 타이틀  
+- WORK_TITLE: 작품의 타이틀  
+- WORK_DESCRIPTION: 작품의 캡션  
+- EMAIL: 이메일
+
+### .github/workflow/deploy.yml 파일에서 수정하시면 안되는 것
+- RESIZE: 이미지를 리사이징할 것인지 결정하는 프로그램적 요소입니다.
+
+### 기타 안내사항
+오타 수정 및 이미지 수정은 아마 직접 가능하시리라 생각합니다.  
+간단히 만들어 기능이 제한적입니다.  
+수정사항이 있으실 때는 언제든지 연락주세요.  
+다만, 간단해 보여도 로직이나 기능을 만드는 데에 제한적이거나 불가능할 수 있습니다.  
+이에 대해서는 별도로 안내해드리거나 상의토록 하겠습니다.  
