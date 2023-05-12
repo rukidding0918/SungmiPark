@@ -10,7 +10,12 @@ from PIL import Image
 
 from utils.works import get_dir_list, get_file_list
 
-load_dotenv()
+try:
+    load_dotenv()
+except:
+    pass
+
+
 TITLE = os.getenv("TITLE", "SUNGMI PARK")
 EMAIL = os.getenv("EMAIL", "rukidding@khu.ac.kr")
 IMAGE_ROOT = "./static/images/"
@@ -85,7 +90,7 @@ if __name__ == "__main__":
         templates = ["index.html", "profile.html", "notes.html", "articles.html", "contact.html"]
         for template in templates:
             if template in ["contact.html", "profile.html"]:
-                write_static_page(template, title=TITLE, email=EMAIL, menus=dirs)
+                write_static_page(template, title=TITLE, menus=dirs, email=EMAIL)
             else:
                 write_static_page(template, title=TITLE, menus=dirs)
 
