@@ -7,10 +7,10 @@ on:
 jobs:
   build:
     env:
-      TITLE: "Seoungmee Park"
+      TITLE: "Seongmee Park"
       EMAIL: "sw5860@naver.com"
-      WORK_TITLE: "SOME TILTLE"
-      WORK_DESCRIPTION: "SOME DESCRIPTION"
+      WORK_TITLE: "Together with Green"
+      WORK_DESCRIPTION: "Acrylic on Canvas"
       RESIZE: 1
       
     runs-on: ubuntu-latest
