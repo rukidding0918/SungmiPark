@@ -75,7 +75,7 @@ def get_size_pattern(file_path):
     size_pattern_1 = r"(\d+)x(\d+)"
     match_1 = re.match(size_pattern_1, filename)
     if match_1:
-        return match_1.group(0)
+        return match_1.group(0) + "cm"
     size_pattern_2 = r"(\d+)(호)"
     match_2 = re.match(size_pattern_2, filename)
     if match_2:
@@ -84,7 +84,7 @@ def get_size_pattern(file_path):
 
 app = flask.Flask(__name__)
 
-resize = RESIZE
+resize = True
 dirs = get_dir_list(IMAGE_ROOT)
 
 if __name__ == "__main__":
@@ -104,12 +104,20 @@ if __name__ == "__main__":
         
             works = []
             for work_image in resized_image_names:
-                works.append({
-                    "title": WORK_TITLE,
-                    "description": WORK_DESCRIPTION,
-                    "size": get_size_pattern(work_image) or "unknown",
-                    "image_url": work_image,
-                })
+                if dir.isdigit():
+                    works.append({
+                        "title": WORK_TITLE,
+                        "description": WORK_DESCRIPTION,
+                        "size": get_size_pattern(work_image) or "unknown",
+                        "image_url": work_image,
+                    })
+                elif dir == "판화":
+                    works.append({
+                        "title": WORK_TITLE,
+                        "description": "Etching & Auqatint",
+                        "size": get_size_pattern(work_image) or "unknown",
+                        "image_url": work_image,
+                    })
             work_html = render_template(
                 'works.html',
                 title = TITLE,

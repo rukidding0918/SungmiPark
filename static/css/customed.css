@@ -66,3 +66,24 @@ dd {
     gap: 20px;
     margin-bottom: 0;
 }
+
+dl.uk-description-list dt {
+    font-weight: bold;
+}
+
+dl.uk-description-list dd {
+    font-size: 0.9rem;
+}
+
+.main {
+    width: 100%;
+    margin-top: 25%;
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    .main {
+        width: 100%;
+        margin-top: 0%;
+    }
+
+}

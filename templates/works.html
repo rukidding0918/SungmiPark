@@ -8,7 +8,7 @@
                 <img src="{{ work.image_url }}" alt="{{ work.title }}" loading="lazy" class="work-image"/>
                 <dl class="uk-description-list">
                     <dt>{{ work.title }}</dt>
-                    <dd>{{ work.description }}, {{ work.size }}</dd>
+                    <dd>{{ work.size }}, {{ work.description }}, {{ year }}</dd>
                 </dl>
             </div>
         {% endfor %}
