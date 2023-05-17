@@ -75,6 +75,10 @@ dl.uk-description-list dd {
     font-size: 0.9rem;
 }
 
+a.uk-link-muted {
+    color: #555;
+}
+
 .main {
     width: 100%;
     margin-top: 25%;
