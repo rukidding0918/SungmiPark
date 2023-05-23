@@ -11,6 +11,7 @@ jobs:
       EMAIL: "sw5860@naver.com"
       WORK_TITLE: "Together with Green"
       WORK_DESCRIPTION: "Acrylic on Canvas"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       RESIZE: 1
       
     runs-on: ubuntu-latest
@@ -37,4 +38,4 @@ jobs:
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
