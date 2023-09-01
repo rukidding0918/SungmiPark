@@ -21,4 +21,5 @@ def get_file_list(path):
     for file in os.listdir(path):
         if os.path.isfile(os.path.join(path, file)):
             files.append(file)
+    files.sort()
     return files

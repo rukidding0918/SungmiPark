@@ -16,11 +16,11 @@ except:
     pass
 
 
-TITLE = os.getenv("TITLE", "SUNGMI PARK")
-EMAIL = os.getenv("EMAIL", "rukidding@khu.ac.kr")
-IMAGE_ROOT = "./static/images/"
-WORK_TITLE = os.getenv("WORK_TITLE", "title")
-WORK_DESCRIPTION = os.getenv("WORK_DESCRIPTION", "description")
+TITLE = os.getenv("TITLE", "Seongmee Park")
+EMAIL = os.getenv("EMAIL", "sw5860@naver.com")
+IMAGE_ROOT = "static/images/"
+WORK_TITLE = os.getenv("WORK_TITLE", "Together with green")
+WORK_DESCRIPTION = os.getenv("WORK_DESCRIPTION", "Acrylic on canvas")
 RESIZE = bool(os.getenv("RESIZE", 1))
 
 
