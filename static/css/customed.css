@@ -32,7 +32,7 @@ h3 {
 }
 
 header {
-    margin-left: 0.85rem !important
+    /* margin-left: 0.85rem !important */
 }
 
 .heading4 {
@@ -47,9 +47,13 @@ td {
     text-align: justify;
 }
 
+th, td {
+    padding-left: 0 !important;
+}
+
 .mylist li {
     font-size: 0.9rem !important;
-    margin-left: 0.85rem !important;
+    /* margin-left: 0.85rem !important; */
 }
 
 img {
