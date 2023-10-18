@@ -1,16 +1,18 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
-    <h2 class="uk-margin">Works in {{ year }}</h2>
-    <div>
-        {% for work in works %}
-            <div class="uk-margin-large-bottom">
-                <img src="{{ work.image_url }}" alt="{{ work.title }}" loading="lazy" class="work-image"/>
-                <dl class="uk-description-list">
-                    <dt>{{ work.title }}</dt>
-                    <dd>{{ work.size }}, {{ work.description }}, {{ year }}</dd>
-                </dl>
-            </div>
-        {% endfor %}
+<h2 class="uk-margin">Works in {{ year }}</h2>
+<div>
+    {% for work in works %}
+    <div class="uk-margin-large-bottom">
+        <img src="{{ work.image_url }}" alt="{{ work.title }}"
+            loading="{% if loop.first %}eager{% else %}lazy{% endif %}" class="work-image"
+            width="{{ work.image_width }}" height="{{ work.image_height }}" />
+        <dl class="uk-description-list">
+            <dt>{{ work.title }}</dt>
+            <dd>{{ work.size }}, {{ work.description }}, {{ year }}</dd>
+        </dl>
     </div>
+    {% endfor %}
+</div>
 {% endblock %}
