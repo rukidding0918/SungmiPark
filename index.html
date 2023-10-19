@@ -8,7 +8,8 @@
     <meta name="description" content="Portfolio site of artist Seongmee Park">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/css/uikit.min.css" />
     <!-- <link rel="stylesheet" href="static/css/customed.css" /> -->
-    <link rel="stylesheet" href="https://d16f7c9yvik7we.cloudfront.net/assets/css/customed.css">
+    <!-- <link rel="stylesheet" href="https://d16f7c9yvik7we.cloudfront.net/assets/css/customed.css"> -->
+    <link rel="stylesheet" href="https://assets.seongmeepark.com/css/customed.css">
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/js/uikit-icons.min.js"></script>
 </head>
@@ -64,7 +65,11 @@
 <div>
     <div class="uk-margin-large-bottom">
         <div class="main">
-            <img src="static/index/main.png" width="750" height="233" alt="Together with Green" class="work-image" />
+            <picture>
+                <source srcset="https://assets.seongmeepark.com/images/main.webp" class="work-image" media="all">
+                <img src="https://assets.seongmeepark.com/images/main.png" width="750" height="233"
+                    alt="Together with Green" class="work-image">
+            </picture>
             <dl class="uk-description-list">
                 <dt>Together with Green</dt>
                 <dd>116.8x364cm, Acrylic on Canvas, 2019</dd>
