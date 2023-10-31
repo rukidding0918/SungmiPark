@@ -19,8 +19,8 @@ except:
 TITLE = os.getenv("TITLE", "Seongmee Park")
 EMAIL = os.getenv("EMAIL", "sw5860@naver.com")
 IMAGE_ROOT = "static/images/"
-WORK_TITLE = os.getenv("WORK_TITLE", "Together with green")
-WORK_DESCRIPTION = os.getenv("WORK_DESCRIPTION", "Acrylic on canvas")
+WORK_TITLE = os.getenv("WORK_TITLE", "Together With Green")
+WORK_DESCRIPTION = os.getenv("WORK_DESCRIPTION", "Acrylic on Canvas")
 RESIZE = bool(os.getenv("RESIZE", 1))
 
 
